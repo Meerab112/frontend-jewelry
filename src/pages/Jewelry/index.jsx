@@ -68,7 +68,7 @@ export default function Jewelry() {
       try {
         setLoading(true);
         const category = selectedFilters.Category?.[0];
-        let url = "${API_BASE}/api/products";
+        let url = `${API_BASE}/api/products`;
 
         if (category) {
           url += `?category=${encodeURIComponent(category)}`;

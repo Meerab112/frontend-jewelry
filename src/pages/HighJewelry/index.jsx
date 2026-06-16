@@ -21,7 +21,7 @@ export default function HighJewelry() {
     const fetchHighJewelry = async () => {
       try {
         setLoading(true);
-        const res = await fetch("${API_BASE}/api/products");
+        const res = await fetch(`${API_BASE}/api/products`);
 
         const data = await res.json();
         const filtered = data.filter((p) => highJewelryNames.includes(p.name));

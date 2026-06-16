@@ -31,7 +31,7 @@ export default function Gifts() {
       try {
         setLoading(true);
         // Fetches all products — update URL when you add a Gifts category to your DB
-        const res = await fetch("${API_BASE}/api/products");
+        const res = await fetch(`${API_BASE}/api/products`);
 
         const data = await res.json();
         setGifts(data);

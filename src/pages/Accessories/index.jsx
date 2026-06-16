@@ -24,7 +24,7 @@ export default function Accessories() {
       try {
         setLoading(true);
         // Fetch all products — no "Accessories" category exists in DB
-        const res = await fetch("${API_BASE}/api/products");
+        const res = await fetch(`${API_BASE}/api/products`);
 
         const data = await res.json();
         setProducts(data);

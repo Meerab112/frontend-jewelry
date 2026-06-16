@@ -149,8 +149,8 @@ export default function LoveEngagement() {
       try {
         setLoading(true);
         const [res1, res2] = await Promise.all([
-          fetch("${API_BASE}/api/products?category=Rings"),
-          fetch("${API_BASE}/api/products?category=Bracelets"),
+          fetch(`${API_BASE}/api/products?category=Rings`),
+          fetch(`${API_BASE}/api/products?category=Bracelets`),
         ]);
         setEngagementRings(await res1.json());
         setWeddingBands(await res2.json());

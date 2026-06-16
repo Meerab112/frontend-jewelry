@@ -50,7 +50,7 @@ export default function Home() {
       try {
         setLoading(true);
 
-        const res = await fetch("${API_BASE}/api/products");
+        const res = await fetch(`${API_BASE}/api/products`);
 
         const data = await res.json();
 
