@@ -1,3 +1,4 @@
+import API_BASE from "../../config.js";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Filter, ChevronDown } from "lucide-react";
@@ -67,7 +68,8 @@ export default function Jewelry() {
       try {
         setLoading(true);
         const category = selectedFilters.Category?.[0];
-        let url = "http://localhost:5000/api/products";
+        let url = "${API_BASE}/api/products";
+
         if (category) {
           url += `?category=${encodeURIComponent(category)}`;
         }

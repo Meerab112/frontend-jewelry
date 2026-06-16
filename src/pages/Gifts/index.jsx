@@ -1,3 +1,4 @@
+import API_BASE from "../../config.js";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ProductCard from "../../components/product/ProductCard";
@@ -30,7 +31,8 @@ export default function Gifts() {
       try {
         setLoading(true);
         // Fetches all products — update URL when you add a Gifts category to your DB
-        const res = await fetch("http://localhost:5000/api/products");
+        const res = await fetch("${API_BASE}/api/products");
+
         const data = await res.json();
         setGifts(data);
       } catch (err) {

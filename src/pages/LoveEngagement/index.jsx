@@ -1,3 +1,4 @@
+import API_BASE from "../../config.js";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ChevronDown, ChevronUp } from "lucide-react";
@@ -148,8 +149,8 @@ export default function LoveEngagement() {
       try {
         setLoading(true);
         const [res1, res2] = await Promise.all([
-          fetch("http://localhost:5000/api/products?category=Rings"),
-          fetch("http://localhost:5000/api/products?category=Bracelets"),
+          fetch("${API_BASE}/api/products?category=Rings"),
+          fetch("${API_BASE}/api/products?category=Bracelets"),
         ]);
         setEngagementRings(await res1.json());
         setWeddingBands(await res2.json());

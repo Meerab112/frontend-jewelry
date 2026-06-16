@@ -1,3 +1,4 @@
+import API_BASE from "../../config.js";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ProductCard from "../../components/product/ProductCard";
@@ -20,7 +21,8 @@ export default function HighJewelry() {
     const fetchHighJewelry = async () => {
       try {
         setLoading(true);
-        const res = await fetch("http://localhost:5000/api/products");
+        const res = await fetch("${API_BASE}/api/products");
+
         const data = await res.json();
         const filtered = data.filter((p) => highJewelryNames.includes(p.name));
         setProducts(filtered);

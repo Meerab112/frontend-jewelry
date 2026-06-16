@@ -1,3 +1,4 @@
+import API_BASE from "../../config.js";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ProductCard from "../../components/product/ProductCard";
@@ -23,7 +24,8 @@ export default function Accessories() {
       try {
         setLoading(true);
         // Fetch all products — no "Accessories" category exists in DB
-        const res = await fetch("http://localhost:5000/api/products");
+        const res = await fetch("${API_BASE}/api/products");
+
         const data = await res.json();
         setProducts(data);
       } catch (err) {

@@ -1,3 +1,4 @@
+import API_BASE from "../../config.js";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
@@ -49,7 +50,8 @@ export default function Home() {
       try {
         setLoading(true);
 
-        const res = await fetch("http://localhost:5000/api/products");
+        const res = await fetch("${API_BASE}/api/products");
+
         const data = await res.json();
 
         setJewelryProducts(data);

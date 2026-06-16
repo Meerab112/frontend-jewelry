@@ -1,3 +1,4 @@
+import API_BASE from "../../config.js";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
@@ -17,7 +18,7 @@ export default function WorldOfBrand() {
       try {
         setLoading(true);
 
-        const res = await fetch("http://localhost:5000/api/brand-content");
+        const res = await fetch("${API_BASE}/api/brand-content");
 
         if (!res.ok) throw new Error("Failed to fetch brand content");
 

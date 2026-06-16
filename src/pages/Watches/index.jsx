@@ -1,3 +1,4 @@
+import API_BASE from "../../config.js";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 //import { ChevronDown, ChevronUp, Play } from "lucide-react";
@@ -48,9 +49,7 @@ export default function Watches() {
     const fetchWatches = async () => {
       try {
         setLoading(true);
-        const res = await fetch(
-          "http://localhost:5000/api/products?category=Watches",
-        );
+        const res = await fetch("${API_BASE}/api/products?category=Watches");
         if (!res.ok) throw new Error("Failed to fetch watches");
         const data = await res.json();
         setWatches(data);
