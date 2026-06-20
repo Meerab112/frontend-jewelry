@@ -19,9 +19,12 @@ export default function OrderConfirmation() {
     }
 
     // FIXED: use by-number route
-    fetch(`http://localhost:5000/api/orders/by-number/${orderNumber}`, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
+    fetch(
+      `https://backend-jewelry-production.up.railway.app/api/orders/by-number/${orderNumber}`,
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      },
+    )
       .then((r) => r.json())
       .then((data) => {
         if (data.order) {

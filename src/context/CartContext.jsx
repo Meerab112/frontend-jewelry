@@ -22,7 +22,9 @@ export function CartProvider({ children }) {
     if (!uid) return;
     setCartLoading(true);
     try {
-      const res = await fetch(`http://localhost:5000/api/cart/${uid}`);
+      const res = await fetch(
+        `https://backend-jewelry-production.up.railway.app/api/cart/${uid}`,
+      );
       const data = await res.json();
       const items = Array.isArray(data) ? data : [];
       setCartItems(items);
@@ -41,11 +43,14 @@ export function CartProvider({ children }) {
     const userId = getUserId();
     if (!userId) return { success: false, error: "User not logged in" };
     try {
-      const res = await fetch("http://localhost:5000/api/cart/add", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ userId, productId, quantity }),
-      });
+      const res = await fetch(
+        "https://backend-jewelry-production.up.railway.app/api/cart/add",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ userId, productId, quantity }),
+        },
+      );
       const data = await res.json();
       if (data.success) await fetchCart(userId);
       return data;
@@ -66,7 +71,7 @@ export function CartProvider({ children }) {
 
     try {
       const res = await fetch(
-        `http://localhost:5000/api/cart/remove/${cartId}`,
+        `https://backend-jewelry-production.up.railway.app/api/cart/remove/${cartId}`,
         {
           method: "DELETE",
         },
@@ -98,11 +103,14 @@ export function CartProvider({ children }) {
     setCartCount(updated.reduce((s, i) => s + i.quantity, 0));
 
     try {
-      const res = await fetch("http://localhost:5000/api/cart/update", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ cartId, quantity: newQty }),
-      });
+      const res = await fetch(
+        "https://backend-jewelry-production.up.railway.app/api/cart/update",
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ cartId, quantity: newQty }),
+        },
+      );
       const data = await res.json();
       if (!data.success) {
         setCartItems(previousItems);

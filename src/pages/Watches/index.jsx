@@ -339,7 +339,7 @@ export default function Watches() {
       try {
         setLoading(true);
         const res = await fetch(
-          "http://localhost:5000/api/products?category=Watches",
+          "https://backend-jewelry-production.up.railway.app/api/products?category=Watches",
         );
         if (!res.ok) throw new Error("Failed to fetch watches");
         const data = await res.json();

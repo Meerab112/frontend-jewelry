@@ -4,7 +4,7 @@ import { Heart, ShoppingBag, Star, ChevronDown, ChevronUp } from "lucide-react";
 import { useCart } from "../context/CartContext";
 import AddToCartPopup from "../components/cart/AddToCartPopup";
 
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://backend-jewelry-production.up.railway.app";
 
 function Accordion({ title, children }) {
   const [open, setOpen] = useState(false);

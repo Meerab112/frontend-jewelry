@@ -57,7 +57,9 @@ export default function Payment() {
     }
 
     // Fetch cart and log what comes back
-    fetch(`http://localhost:5000/api/cart/${user.id}`)
+    fetch(
+      `https://backend-jewelry-production.up.railway.app/api/cart/${user.id}`,
+    )
       .then((r) => r.json())
       .then((data) => {
         console.log("[Payment] raw cart API response:", data);
@@ -152,7 +154,9 @@ export default function Payment() {
       const user = JSON.parse(localStorage.getItem("user") || "{}");
       if (user?.id) {
         try {
-          const r = await fetch(`http://localhost:5000/api/cart/${user.id}`);
+          const r = await fetch(
+            `https://backend-jewelry-production.up.railway.app/api/cart/${user.id}`,
+          );
           const freshCart = await r.json();
           console.log("[handlePlaceOrder] emergency re-fetch:", freshCart);
           if (Array.isArray(freshCart) && freshCart.length > 0) {
@@ -216,14 +220,17 @@ export default function Payment() {
 
       console.log("[submitOrder] payload:", payload);
 
-      const res = await fetch("http://localhost:5000/api/orders/create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
+      const res = await fetch(
+        "https://backend-jewelry-production.up.railway.app/api/orders/create",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(payload),
         },
-        body: JSON.stringify(payload),
-      });
+      );
 
       const data = await res.json();
       console.log("[submitOrder] response:", data);

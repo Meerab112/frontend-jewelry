@@ -14,9 +14,12 @@ export default function LoginSuccess() {
 
       // Fetch user profile and store it (same as regular login)
       axios
-        .get("http://localhost:5000/api/auth/profile", {
-          headers: { Authorization: `Bearer ${token}` },
-        })
+        .get(
+          "https://backend-jewelry-production.up.railway.app/api/auth/profile",
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          },
+        )
         .then((res) => {
           localStorage.setItem("user", JSON.stringify(res.data.user));
         })

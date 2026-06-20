@@ -161,10 +161,13 @@ export default function Login() {
       setLoading(true);
       setErrorMsg("");
 
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
-        email: form.email,
-        password: form.password,
-      });
+      const res = await axios.post(
+        "https://backend-jewelry-production.up.railway.app/api/auth/login",
+        {
+          email: form.email,
+          password: form.password,
+        },
+      );
 
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
@@ -255,7 +258,8 @@ export default function Login() {
             <button
               type="button"
               onClick={() => {
-                window.location.href = "http://localhost:5000/api/auth/google";
+                window.location.href =
+                  "https://backend-jewelry-production.up.railway.app/api/auth/google";
               }}
               className="w-full py-4 rounded-xl border border-gray-300 bg-white text-black font-medium hover:bg-gray-50 transition"
             >
