@@ -118,6 +118,8 @@ export default function Login() {
             <button
               type="button"
               onClick={() => {
+                const redirect =
+                  sessionStorage.getItem("redirectAfterLogin") || "/";
                 window.location.href =
                   "https://backend-jewelry-production.up.railway.app/api/auth/google";
               }}

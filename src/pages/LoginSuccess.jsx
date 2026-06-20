@@ -27,10 +27,12 @@ export default function LoginSuccess() {
           // Profile fetch failed — not critical, continue anyway
         })
         .finally(() => {
-          // Redirect back to checkout or home
-          const redirect = sessionStorage.getItem("redirectAfterLogin") || "/";
+          const redirectTo =
+            params.get("redirectTo") ||
+            sessionStorage.getItem("redirectAfterLogin") ||
+            "/";
           sessionStorage.removeItem("redirectAfterLogin");
-          navigate(redirect);
+          navigate(redirectTo);
         });
     } else {
       navigate("/login");
