@@ -6,11 +6,31 @@ import ProductCard from "../../components/product/ProductCard";
 import { IMGS } from "../../data/products";
 
 const categories = [
-  { label: "Necklaces & Pendants", img: IMGS.necklace[0], path: "/jewelry" },
-  { label: "Bracelets", img: IMGS.bracelet[0], path: "/jewelry" },
-  { label: "Earrings", img: IMGS.earring[0], path: "/jewelry" },
-  { label: "Rings", img: IMGS.ring[0], path: "/jewelry" },
-  { label: "Watches", img: IMGS.watch[0], path: "/watches" },
+  {
+    label: "Necklaces & Pendants",
+    img: "/images/jewelry/n2.webp",
+    path: "/jewelry",
+  },
+  {
+    label: "Bracelets",
+    img: "/images/jewelry/b2.webp",
+    path: "/jewelry",
+  },
+  {
+    label: "Earrings",
+    img: "/images/jewelry/e2.webp",
+    path: "/jewelry",
+  },
+  {
+    label: "Rings",
+    img: "/images/jewelry/r2.webp",
+    path: "/jewelry",
+  },
+  {
+    label: "Watches",
+    img: "/images/jewelry/w11.webp",
+    path: "/watches",
+  },
 ];
 
 const experience = [
