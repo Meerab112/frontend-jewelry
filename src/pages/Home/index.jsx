@@ -13,22 +13,22 @@ const categories = [
   },
   {
     label: "Bracelets",
-    img: "/images/jewelry/b2.webp",
+    img: "/images/jewelry/Bangles.webp",
     path: "/jewelry",
   },
   {
     label: "Earrings",
-    img: "/images/jewelry/e2.webp",
+    img: "/images/jewelry/Earrings.webp",
     path: "/jewelry",
   },
   {
     label: "Rings",
-    img: "/images/jewelry/r2.webp",
+    img: "/images/jewelry/OIP (1).jfif",
     path: "/jewelry",
   },
   {
     label: "Watches",
-    img: "/images/jewelry/w11.webp",
+    img: "/images/jewelry/OIP.jfif",
     path: "/watches",
   },
 ];
