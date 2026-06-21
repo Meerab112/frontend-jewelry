@@ -8,27 +8,27 @@ import { IMGS } from "../../data/products";
 const categories = [
   {
     label: "Necklaces & Pendants",
-    img: "/images/jewelry/n2.webp",
+    img: "\images\jewelry\Antique.webp",
     path: "/jewelry",
   },
   {
     label: "Bracelets",
-    img: "/images/jewelry/Bangles.webp",
+    img: ",\images\jewelry\Bangles.webp",
     path: "/jewelry",
   },
   {
     label: "Earrings",
-    img: "/images/jewelry/Earrings.webp",
+    img: "\images\jewelry\Earrings.webp,",
     path: "/jewelry",
   },
   {
     label: "Rings",
-    img: "/images/jewelry/OIP (1).jfif",
+    img: "\images\jewelry\OIP (1).jfif",
     path: "/jewelry",
   },
   {
     label: "Watches",
-    img: "/images/jewelry/OIP.jfif",
+    img: "\images\jewelry\OIP.jfif",
     path: "/watches",
   },
 ];
