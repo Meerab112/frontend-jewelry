@@ -107,75 +107,32 @@ export default function Home() {
       </section>
 
       {/* CATEGORY */}
-      <section className="max-w-7xl mx-auto px-4 py-12">
-        <h2 className="section-title font-playfair text-center mb-8">
+      <section className="px-4 py-8">
+        <h2 className="font-playfair text-2xl text-center mb-6">
           Shop by Category
         </h2>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="flex flex-col gap-4">
           {categories.map((cat) => (
             <Link
               key={cat.label}
               to={cat.path}
               className="group block relative overflow-hidden rounded-sm"
             >
-              <div className="aspect-[3/4] bg-gray-100">
+              {/* Tall rectangular image */}
+              <div className="h-56 w-full bg-gray-100">
                 <img
                   src={cat.img}
                   alt={cat.label}
                   className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
                 />
               </div>
-              {/* Text overlay like Zaivraat */}
-              <div className="absolute bottom-0 left-0 right-0 bg-black/50 py-3 px-2">
-                <p className="text-center text-xs uppercase tracking-widest text-white font-medium">
-                  {cat.label}
-                </p>
+              {/* Text overlay at bottom like Zaivraat */}
+              <div className="absolute bottom-0 left-0 right-0 bg-white/90 py-4 px-4">
+                <p className="text-gray-500 text-xs">Explore our collection</p>
+                <h3 className="text-gray-900 font-bold text-xl">{cat.label}</h3>
               </div>
             </Link>
           ))}
-        </div>
-      </section>
-      {/* BANNER CARDS like Zaivraat */}
-      <section className="px-4 py-6">
-        <div className="grid grid-cols-2 gap-3">
-          <div className="relative overflow-hidden rounded-sm aspect-square bg-gray-100">
-            <img
-              src={IMGS.necklace[1]}
-              alt="Necklaces"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/30 flex flex-col justify-end p-3">
-              <p className="text-white text-xs opacity-80">
-                Crafted for elegance
-              </p>
-              <h3 className="text-white font-bold text-lg">Necklaces</h3>
-              <Link
-                to="/jewelry"
-                className="mt-2 bg-gold text-black text-xs px-3 py-1 inline-block"
-              >
-                View All →
-              </Link>
-            </div>
-          </div>
-          <div className="relative overflow-hidden rounded-sm aspect-square bg-gray-100">
-            <img
-              src={IMGS.bracelet[1]}
-              alt="Bracelets"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/30 flex flex-col justify-end p-3">
-              <p className="text-white text-xs opacity-80">
-                Grace in every move
-              </p>
-              <h3 className="text-white font-bold text-lg">Bracelets</h3>
-              <Link
-                to="/jewelry"
-                className="mt-2 bg-gold text-black text-xs px-3 py-1 inline-block"
-              >
-                View All →
-              </Link>
-            </div>
-          </div>
         </div>
       </section>
       {/* SLIDER */}
