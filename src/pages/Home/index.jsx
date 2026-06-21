@@ -96,7 +96,7 @@ export default function Home() {
           playsInline
           className="w-full h-full object-cover scale-105"
         >
-          <source src="/videos/banner2.mp4" type="video/mp4" />
+          <source src="/videos/banner3.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-white text-center px-6">
           <p className="text-xs tracking-[0.4em] uppercase mb-4 opacity-80">
