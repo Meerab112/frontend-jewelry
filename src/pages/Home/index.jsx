@@ -135,7 +135,7 @@ export default function Home() {
         <h2 className="font-playfair text-2xl text-center mb-6">
           Shop by Category
         </h2>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6">
           {categories.map((cat) => (
             <Link
               key={cat.label}
@@ -143,7 +143,7 @@ export default function Home() {
               className="group block relative overflow-hidden rounded-sm"
             >
               {/* Tall rectangular image */}
-              <div className="h-56 w-full bg-gray-100">
+              <div className="h-56 md:h-72 w-full bg-gray-100">
                 <img
                   src={cat.img}
                   alt={cat.label}
