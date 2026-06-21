@@ -89,11 +89,15 @@ export default function Home() {
     <div className="pt-24">
       {/* HERO */}
       <section className="relative h-[88vh] min-h-[600px] overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1800&q=80"
-          alt="Hero"
-          className="w-full h-full object-cover scale-105 animate-[slowZoom_8s_ease-out_forwards]"
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover scale-105"
+        >
+          <source src="/videos/banner.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-white text-center px-6">
           <p className="text-xs tracking-[0.4em] uppercase mb-4 opacity-80">
             New Collection 2024
