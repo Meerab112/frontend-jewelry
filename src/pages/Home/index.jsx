@@ -23,12 +23,12 @@ const categories = [
   },
   {
     label: "Rings",
-    img: "\images\jewelry\OIP (1).jfif",
+    img: "\images\jewelry\Rings.jfif",
     path: "/jewelry",
   },
   {
     label: "Watches",
-    img: "\images\jewelry\OIP.jfif",
+    img: "\images\jewelry\Watches.jfif",
     path: "/watches",
   },
 ];
