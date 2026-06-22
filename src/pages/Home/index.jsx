@@ -9,28 +9,24 @@ const categories = [
   {
     label: "Necklaces & Pendants",
     img: "/images/jewelry/Antique.webp",
-    path: "/jewelry",
+    path: "/jewelry?category=Necklaces",
   },
   {
     label: "Bracelets",
     img: "/images/jewelry/Bangles.webp",
-    path: "/jewelry",
+    path: "/jewelry?category=Bracelets",
   },
   {
     label: "Earrings",
     img: "/images/jewelry/Earrings.webp",
-    path: "/jewelry",
+    path: "/jewelry?category=Earrings",
   },
   {
     label: "Rings",
     img: "/images/jewelry/Rings.jfif",
-    path: "/jewelry",
+    path: "/jewelry?category=Rings",
   },
-  {
-    label: "Watches",
-    img: "/images/jewelry/Watches.jfif",
-    path: "/watches",
-  },
+  { label: "Watches", img: "/images/jewelry/Watches.jfif", path: "/watches" },
 ];
 
 const experience = [

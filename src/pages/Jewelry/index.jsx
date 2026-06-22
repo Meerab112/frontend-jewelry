@@ -1,6 +1,6 @@
 import API_BASE from "../../config.js";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { Filter, ChevronDown } from "lucide-react";
 import ProductCard from "../../components/product/ProductCard";
 import { IMGS } from "../../data/products";
@@ -57,7 +57,12 @@ function FilterGroup({ label, options, selected, onChange }) {
 }
 
 export default function Jewelry() {
-  const [selectedFilters, setSelectedFilters] = useState({});
+  const [searchParams] = useSearchParams();
+  const urlCategory = searchParams.get("category");
+
+  const [selectedFilters, setSelectedFilters] = useState(() =>
+    urlCategory ? { Category: [urlCategory] } : {},
+  );
   const [sortBy, setSortBy] = useState("default");
   const [showFilters, setShowFilters] = useState(false);
   const [products, setProducts] = useState([]);
