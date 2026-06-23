@@ -39,6 +39,7 @@ export default function ProductDetail() {
   const [wished, setWished] = useState(false);
   const [loading, setLoading] = useState(true);
   const [addingToCart, setAddingToCart] = useState(false);
+  const [buyingNow, setBuyingNow] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [cartError, setCartError] = useState("");
 
@@ -97,6 +98,23 @@ export default function ProductDetail() {
     setAddingToCart(false);
     if (result?.success) {
       setShowPopup(true);
+    } else {
+      setCartError(result?.error || "Failed to add to cart. Please try again.");
+    }
+  };
+  const handleShopNow = async () => {
+    if (!product) return;
+    setCartError("");
+    const user = JSON.parse(localStorage.getItem("user") || "{}");
+    if (!user?.id) {
+      navigate("/login");
+      return;
+    }
+    setBuyingNow(true);
+    const result = await addToCart(product.id, 1);
+    setBuyingNow(false);
+    if (result?.success) {
+      navigate("/cart");
     } else {
       setCartError(result?.error || "Failed to add to cart. Please try again.");
     }
@@ -226,6 +244,14 @@ export default function ProductDetail() {
               >
                 <ShoppingBag size={16} />
                 {addingToCart ? "Adding..." : "Add to Cart"}
+              </button>
+              <button
+                onClick={handleShopNow}
+                disabled={buyingNow}
+                className="w-full border border-black text-black py-3 flex justify-center items-center gap-2 hover:bg-gray-100 transition disabled:opacity-60"
+              >
+                <ShoppingBag size={16} />
+                {buyingNow ? "Processing..." : "Shop Now"}
               </button>
 
               {cartError && (
